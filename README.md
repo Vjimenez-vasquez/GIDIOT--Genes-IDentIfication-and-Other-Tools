@@ -17,4 +17,11 @@ export PATH=$PATH:$PWD/sratoolkit.3.0.10-ubuntu64/bin
 prefetch --option-file SRA_ACCESSIONS_LIST.txt ; 
 fasterq-dump --split-files *.sra ;
 fastqc -t 4 *.fastq ;
+
+6. make some changes
+mkdir fastqc_reports ;
+mkdir sra_files ;
+mv *.sra sra_files/ ;
+mv *_fastqc.html _fastqc.zip fastqc_reports/ ;
+pigz *.fastq
 ```
