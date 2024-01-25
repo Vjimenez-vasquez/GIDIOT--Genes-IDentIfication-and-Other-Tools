@@ -18,7 +18,7 @@ export PATH=$PATH:$PWD/sratoolkit.3.0.10-ubuntu64/bin
 mkdir fastqc_reports ;
 mkdir sra_files ;
 
-prefetch --option-file SRA_ACCESSIONS_LIST.txt ;
+prefetch --max-size 50G --option-file SRA_ACCESSIONS_LIST.txt ;
 mv */*.sra . ;
 fasterq-dump --split-files *.sra ;
 fastqc -t 25 *.fastq ;
